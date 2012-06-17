@@ -4,9 +4,8 @@ set nocompatible
 
 
 " ========= Pathogen initialization
-" Use pathogen to load all other plugins.
-" It will automatically load all plugins in ./bundle/
-runtime bundle/pathogen/autoload/pathogen.vim
+" Use pathogen to load all other plugins. It will automatically load all plugins in ./bundle/
+source /Users/lion/Documents/Dropbox/dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 " Generate documentation for all plugins in ./bundle/
 call pathogen#helptags()
