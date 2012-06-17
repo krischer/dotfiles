@@ -2,20 +2,27 @@
 " vimrc.
 set nocompatible
 
-
+" =============================================================================
 " ========= Pathogen initialization
-" Use pathogen to load all other plugins. It will automatically load all plugins in ./bundle/
+" Use pathogen to load all other plugins. Automatically loads all plugins in ./bundle/
+" XXX: As soon as production ready, symlink the vim directory in this filder
+" to ~/.vim and the vimrc file to ~/.vimrc and change the next line to
+" runtime bundle/pathogen/autoload/pathogen.vim
+" This removes the need for the absolute filepath. In the meantime this works
+" just fine.
 source /Users/lion/Documents/Dropbox/dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 " Generate documentation for all plugins in ./bundle/
 call pathogen#helptags()
 
 
+" =============================================================================
 " ========== General configuration
-let mapleader=","               " change the leader char to be a comma instead of the usual backslash
+let mapleader=","               " change the leader key to comma
 set t_Co=256                    " Enable 256 color in vim.
 
 
+" =============================================================================
 " ==========  Color scheme
 " use set background=light for the light solarized colorscheme
 set background=dark
@@ -23,6 +30,25 @@ set background=dark
 colorscheme solarized
 
 
+" =============================================================================
 " ========== Magic happening behind the scenes
 " Automatically remove all trailing whitespace upon saving the current buffer.
 autocmd BufWritePre * :%s/\s\+$//e
+" All yanking and pasting works with the actual system clipboard. Does not
+" work with all vim version but other ways to achieve this behaviour also
+" exist.
+set clipboard=unnamed
+
+
+" =============================================================================
+" ==========  Syntax highlighting
+syntax enable
+" Recognize GLSL files based on the extension name.
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
+
+
+" =============================================================================
+" ========== Load all other settings stored in their own files
+for f in split(glob('~/Documents/Dropbox/dotfiles/vim/settings/*.vim'), '\n')
+    exe 'source' f
+endfor
