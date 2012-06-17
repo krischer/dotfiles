@@ -1,0 +1,29 @@
+" Use vim settings instead of vi settings. MUST be the first thing in the
+" vimrc.
+set nocompatible
+
+
+" ========= Pathogen initialization
+" Use pathogen to load all other plugins.
+" It will automatically load all plugins in ./bundle/
+runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
+" Generate documentation for all plugins in ./bundle/
+call pathogen#helptags()
+
+
+" ========== General configuration
+let mapleader=","               " change the leader char to be a comma instead of the usual backslash
+set t_Co=256                    " Enable 256 color in vim.
+
+
+" ==========  Color scheme
+" use set background=light for the light solarized colorscheme
+set background=dark
+" Use the solarized colorscheme: http://ethanschoonover.com/solarized
+colorscheme solarized
+
+
+" ========== Magic happening behind the scenes
+" Automatically remove all trailing whitespace upon saving the current buffer.
+autocmd BufWritePre * :%s/\s\+$//e
