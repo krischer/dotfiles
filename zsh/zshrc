@@ -62,9 +62,28 @@ source "$OMZ/init.zsh"
 ############################################################
 # ALIASES
 
-# If on OSX, use the vim that ships with MacVim which should have all the right compile options.
+# Some aliases should only be set while using OSX.
 if [[ "$OSTYPE" == darwin* ]]; then
+    # Use the vim that ships with MacVim.
     alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+    # Alias Quicklook for some filetypes. Simply typing the filename should
+    # open Quicklook with the file. The quicklook command require the osx module
+    # from oh-my-zsh or at least the ql command.
+    # Websites
+    alias -s html=ql
+    alias -s htm=ql
+    # Markdown
+    alias -s md=ql
+    alias -s markdown=ql
+    # Image files
+    alias -s png=ql
+    alias -s jpg=ql
+    alias -s jpeg=ql
+    alias -s gif=ql
+    alias -s bmp=ql
+    # Misc
+    alias -s pdf=ql
+    alias -s txt=ql
 fi
 # Easier ipython with pylab alias
 alias ipy="ipython --pylab"
