@@ -66,6 +66,10 @@ source "$OMZ/init.zsh"
 if [[ "$OSTYPE" == darwin* ]]; then
     # Use the vim that ships with MacVim.
     alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+    # Propert 256 color tmux. Also OSX needs special care for copy/paste to
+    # work inside tmux. This will source the basic tmux.conf and execute one
+    # special command for copy/paste to work.
+    alias tmux="TERM=screen-256color-bce tmux -2 -f ~/.tmux/tmux-osx.conf"
     # Alias Quicklook for some filetypes. Simply typing the filename should
     # open Quicklook with the file. The quicklook command require the osx module
     # from oh-my-zsh or at least the ql command.
@@ -84,10 +88,20 @@ if [[ "$OSTYPE" == darwin* ]]; then
     # Misc
     alias -s pdf=ql
     alias -s txt=ql
+else
+    # On non-OSX the simple tmux.conf is sufficient.
+    alias tmux="TERM=screen-256color-bce tmux -2 -f ~/.tmux/tmux.conf"
 fi
 # Easier ipython with pylab alias
 alias ipy="ipython --pylab"
 ############################################################
+
+
+############################################################
+# PATHS
+export PYTHONPATH=/Users/lion/temp/PREFIX_TEMP/PREFIX/lib/python2.7/site-packages:/Users/lion/temp/PREFIX_TEMP/FRAMEWORK_PREFIX/Python.framework/Versions/Current/lib/python2.7/site-packages
+############################################################
+
 
 ############################################################
 # CUSTOM FUNCTIONS

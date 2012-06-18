@@ -1,0 +1,9 @@
+#! /bin/bash -f
+
+# Simple script that toggles maximized stage for the current tmux pane.
+zoomed=`tmux list-window | grep tmux-zoom | cut -f 1 -d ':'`;
+if [ $zoomed ]; then
+ tmux last-window; tmux swap-pane -s tmux-zoom; tmux kill-window -t tmux-zoom;
+else
+ tmux new-window -d -n tmux-zoom; tmux swap-pane -s tmux-zoom; tmux select-window -t tmux-zoom;
+fi
