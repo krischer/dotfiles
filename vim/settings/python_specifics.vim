@@ -1,5 +1,7 @@
 " All vim settings that are only useful for Python go here.
 
+" Highlight column 80 for python filescolumn 80 for python files.
+au FileType python set colorcolumn=80
 
 " Complete Python highlighting (numbers, exception and wrong whitespaces)
 let python_highlight_all = 1

@@ -40,7 +40,6 @@ zstyle ':omz:load' omodule \
   'completion' \
   'prompt' \
   'history-substring-search' \
-  'python' \
   'tmux' \
   'git' \
   'command-not-found' \

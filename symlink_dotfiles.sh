@@ -13,3 +13,5 @@ ln -s -f -v `pwd`/vim ~/.vim
 # using the provided tmux.conf inside the folder.
 ln -s -f -v `pwd`/tmux ~/.tmux
 
+# All the misc rc files
+ln -s -f -v `pwd`/misc_rc_files/pylintrc ~/.pylintrc

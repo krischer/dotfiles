@@ -23,25 +23,29 @@ call pathogen#helptags()
 " =============================================================================
 " ========== General configuration
 let mapleader=","               " change the leader key to colon. Much easier
-				" to reach than the standard backslash.
+                                " to reach than the standard backslash.
 set t_Co=256                    " Enable 256 color in vim.
 set laststatus=2                " Always show the statusline.
 set encoding=utf-8              " Usually necessary to show unicode glyphs.
 set hidden                      " Enable hidden buffers. Basically enables
-				" buffer switching without saving first.
-syntax on 			" Enable syntax highlighting.
-set updatetime=1000 		" Update time of many VIM things. Seems a
-				" reasonable value.
-set cursorline          	" show the cursor line
-set cursorcolumn        	" show the cursor column
-set magic            		" Does some magic ;-) Newline characters, ...
-set spell			" Spell checking is on by default.
+                                " buffer switching without saving first.
+syntax on                       " Enable syntax highlighting.
+set updatetime=1000             " Update time of many VIM things. Seems a
+                                " reasonable value.
+set cursorline                  " show the cursor line
+set cursorcolumn                " show the cursor column
+set magic                       " Does some magic ;-) Newline characters, ...
+set spell                       " Spell checking is on by default.
+set number                      " Enable line numbering
+set ttyfast                     " The current terminal is a fast terminal so
+                                " more stuff can be sent at once.
 
 
-set undofile                " Save undo's after file closes
-set undodir=$HOME/.vim/undo " where to save undo histories
-set undolevels=1000         " How many undos
-set undoreload=10000        " number of lines to save for undo
+
+set undofile                    " Save undo's after file closes
+set undodir=$HOME/.vim/undo     " where to save undo histories
+set undolevels=1000             " How many undos
+set undoreload=10000            " number of lines to save for undo
 
 " Unix like tab completion.
 set wildmenu
@@ -60,16 +64,31 @@ filetype on
 
 
 " =============================================================================
+" ==========  Searching
+" Fix vim regex handling.
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase                  " Case insensitive search
+set smartcase                   " Case sensitive if upper case in search string
+set gdefault                    " Always apply substitutions globally. No more
+                                " /g at the end
+" The next three work together to highlight searches.
+set incsearch
+set showmatch
+set hlsearch
+
+
+" =============================================================================
 " ==========  Tabs and indentation
 " Always use 4 spaces as tabs.
 filetype plugin indent on
 filetype indent on
 set tabstop=4
-set shiftwidth=4     		" numbers of spaces to (auto)indent
+set shiftwidth=4            " numbers of spaces to (auto)indent
 set expandtab
-set smartindent      		" smart autoindenting when starting a new line
-set cindent          		" cindent
-set autoindent       		" always set autoindenting on
+set smartindent             " smart autoindenting when starting a new line
+set cindent                 " cindent
+set autoindent              " always set autoindenting on
 
 
 " =============================================================================
@@ -91,6 +110,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 " work with all vim version but other ways to achieve this behaviour also
 " exist and will be added if necessary.
 set clipboard=unnamed
+" Save all files upon loosing focus of vim, aka switching apps.
+au FocusLost * :wa
 
 
 " =============================================================================
