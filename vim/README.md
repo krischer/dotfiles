@@ -2,6 +2,10 @@
 
 ## Useful keyboard combinations
 
+### General shortcuts
+
+    ,vs       | (Vim Source) source (aka reload) the vimrc
+
 ### EasyMotion plugin
 Incredibly useful!
 
