@@ -2,6 +2,8 @@
 
 Central collection of my dotfiles.
 
+## Screenshot
+![Result](http://i.imgur.com/cyqvg.png)
 
 ## Installation
 ### Requirements
