@@ -30,9 +30,16 @@ Incredibly useful!
     ,cA       | Add comment at the end of the current line
 
 ### Syntastic
+
     ,er       | Toggle the Syntax error window. Off by default.
+
+### vim-indent-guides
+
+    ,ig       | Toggle indent guides. Off by default.
 
 ## General tips
 
-Profiling vim's startup process
+
+### Profiling vim's startup process
+
     vim --startuptime vim.log
