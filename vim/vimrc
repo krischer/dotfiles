@@ -66,8 +66,6 @@ filetype on
 " =============================================================================
 " ==========  Searching
 " Fix vim regex handling.
-nnoremap / /\v
-vnoremap / /\v
 set ignorecase                  " Case insensitive search
 set smartcase                   " Case sensitive if upper case in search string
 set gdefault                    " Always apply substitutions globally. No more
@@ -126,3 +124,12 @@ au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 for f in split(glob('~/.vim/settings/*.vim'), '\n')
     exe 'source' f
 endfor
+
+" Experimental Taghighlight coloring...
+hi Class term=bold ctermfg=red
+hi Function term=bold ctermfg=magenta
+hi Import term=bold ctermfg=green
+hi Member term=bold ctermfg=yellow
+hi GlobalVariable term=bold ctermfg=blue
+
+
