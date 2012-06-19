@@ -40,3 +40,15 @@
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/TagHighlight"]
+	path = vim/bundle/TagHighlight
+	url = git://github.com/abudden/TagHighlight.git
+[submodule "vim/bundle/python-vim"]
+	path = vim/bundle/python-vim
+	url = git://github.com/vim-scripts/python.vim--Vasiliev.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git
