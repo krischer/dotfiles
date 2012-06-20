@@ -57,6 +57,33 @@ which will symlink everything in the home directory so it should be ready to use
 
 (from [here](https://www.linux.com/learn/tutorials/442438-vim-tips-folding-fun))
 
+
+### Regex in vim
+    .  any character except new line
+    \s whitespace character                      \S non-whitespace character
+    \d digit                                     \D non-digit
+    \x hex digit                                 \X non-hex digit
+    \o octal digit                               \O non-octal digit
+    \h head of word character (a-z,A-Z, and _)   \H non-head of word character
+    \p printable character                       \P like \p, but excluding digits
+    \w word character                            \W non-word character
+    \a alphabetic character                      \A non-alphabetic character
+    \l lowercase character                       \L non-lowercase character
+    \u uppercase character                       \U non-uppercase character
+
+    *      matches 0 or more of the preceding characters
+    .*     matches everything including an empty line
+    \+     matches 1 or more of the preceding characters
+    \=     matches 0 or 1 more of the preceding characters
+    \{n,m} matches from n to m of the precedingding characters
+    \{n}   matches exactly n times of the preceding characterscters
+    \{,m}  matches at most m (from 0 to m) of the preceding characters
+    \{n,}  matches at least n of of the preceding characters
+    where n and m are positive integers (>0)
+
+(from [http://vimregex.com](http://vimregex.com) - also has much much more info on vim regex)
+
+
 ### EasyMotion plugin
 Incredibly useful! Hard to describe how it works. Just try it and you will see.
 
