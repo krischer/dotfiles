@@ -38,6 +38,25 @@ which will symlink everything in the home directory so it should be ready to use
     cib       | (Change Inside Bracket) change inside brackets
     diw       | (Delete Inside Word) delete the current word
 
+### How to use folding in vim
+
+    zf#j      | Creates a fold from the cursor down # lines.
+    zf/string | Creates a fold from the cursor to string .
+    zj        | Moves the cursor to the next fold.
+    zk        | Moves the cursor to the previous fold.
+    zo        | Opens a fold at the cursor.
+    zO        | Opens all folds at the cursor.
+    zm        | Increases the foldlevel by one.
+    zM        | Closes all open folds.
+    zr        | Decreases the foldlevel by one.
+    zR        | Decreases the foldlevel to zero -- all folds will be open.
+    zd        | Deletes the fold at the cursor.
+    zE        | Deletes all folds.
+    [z        | Move to start of open fold.
+    ]z        | Move to end of open fold.
+
+(from [here](https://www.linux.com/learn/tutorials/442438-vim-tips-folding-fun))
+
 ### EasyMotion plugin
 Incredibly useful! Hard to describe how it works. Just try it and you will see.
 
