@@ -44,7 +44,6 @@ zstyle ':omz:load' omodule \
   'git' \
   'command-not-found' \
   'osx' \
-  'ssh-agent' \
   'utility' \
   'z'
 
