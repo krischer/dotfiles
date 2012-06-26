@@ -129,6 +129,17 @@ Special __ss__ always wraps the whole line ignoring leading whitespaces.
 
     ,er       | Toggle the Syntax error window. Off by default.
 
+### CtrlP
+MRU = Most Recently Used files
+
+    Ctrl-p    | Invoke CtrlP
+
+    If CtrlP is open:
+    Ctrl-f    | Cycle modes (files, mru, buffers)
+    Ctrl-d    | Filename search only, not full path
+    Ctrl-r    | Switch to regex mode
+    Ctrl-z    | Mark multiple files and then open them with Ctrl-o
+
 ### vim-indent-guides
 
     ,ig       | Toggle indent guides. Off by default.
