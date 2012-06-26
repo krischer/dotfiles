@@ -140,6 +140,14 @@ MRU = Most Recently Used files
     Ctrl-r    | Switch to regex mode
     Ctrl-z    | Mark multiple files and then open them with Ctrl-o
 
+### argtextobj
+Provides an argument (a function argument in code) text-object, 'a'. Its quite
+smart about different programming language.
+
+    daa       | (Delete an argument)
+    dia       | (Delete inner argument) - does not delete the following colon.
+    cia       | (Change inner argument)
+
 ### vim-indent-guides
 
     ,ig       | Toggle indent guides. Off by default.
