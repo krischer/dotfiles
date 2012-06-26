@@ -73,3 +73,6 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/argtextobj"]
+	path = vim/bundle/argtextobj
+	url = git://github.com/vim-scripts/argtextobj.vim.git
