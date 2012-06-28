@@ -148,9 +148,22 @@ smart about different programming language.
     dia       | (Delete inner argument) - does not delete the following colon.
     cia       | (Change inner argument)
 
+
 ### vim-indent-guides
 
     ,ig       | Toggle indent guides. Off by default.
+
+
+### ack.vim
+
+    Usage:
+       :Ack [options] {pattern} [{directory}] (use --python, --c to search only in specific files)
+
+    In the quickfix window
+    o         | to open (same as enter)
+    go        | to preview file (open but maintain focus on ack.vim results)
+    v         | to open in vertical split
+    q         | to close the quickfix window
 
 
 ### Profiling vim's startup process
