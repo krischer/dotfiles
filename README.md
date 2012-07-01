@@ -31,7 +31,7 @@ which will symlink everything in the home directory so it should be ready to use
 
 ### General shortcuts
 
-    ,vs       | (Vim Source) source (aka reload) the vimrc
+    ,vs<space>| (Vim Source) source (aka reload) the vimrc
     vap       | (Visual Around Paragraph) visually select this paragraph.
     ci"       | (Change Inside ") change inside the double quotes
     ci'       | (Change Inside ') change inside the single quotes
@@ -169,6 +169,10 @@ smart about different programming language.
 ### numbers.vim
 
     F3        | Toggle absolute/relative line numbering.
+
+### Latex specific things
+
+    ,fs       | (format sentence) Takes the current sentence, and indents all lines beloning to it.
 
 
 ### Profiling vim's startup process
