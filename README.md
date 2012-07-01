@@ -166,6 +166,11 @@ smart about different programming language.
     q         | to close the quickfix window
 
 
+### numbers.vim
+
+    F3        | Toggle absolute/relative line numbering.
+
+
 ### Profiling vim's startup process
 
     vim --startuptime vim.log
