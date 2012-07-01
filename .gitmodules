@@ -82,3 +82,6 @@
 [submodule "vim/bundle/numbers.vim"]
 	path = vim/bundle/numbers.vim
 	url = https://github.com/myusuf3/numbers.vim.git
+[submodule "vim/bundle/vim-latex"]
+	path = vim/bundle/vim-latex
+	url = git://github.com/jcf/vim-latex.git
