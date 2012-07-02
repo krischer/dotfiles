@@ -85,3 +85,6 @@
 [submodule "vim/bundle/vim-latex"]
 	path = vim/bundle/vim-latex
 	url = git://github.com/jcf/vim-latex.git
+[submodule "vim/bundle/ShowMarks"]
+	path = vim/bundle/ShowMarks
+	url = git://github.com/juanpabloaj/ShowMarks.git
