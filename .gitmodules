@@ -88,3 +88,6 @@
 [submodule "vim/bundle/ShowMarks"]
 	path = vim/bundle/ShowMarks
 	url = git://github.com/juanpabloaj/ShowMarks.git
+[submodule "vim/bundle/xmledit"]
+	path = vim/bundle/xmledit
+	url = git://github.com/sukima/xmledit.git
