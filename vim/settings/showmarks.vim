@@ -1,6 +1,6 @@
-" Make them all look similiar
-highlight ShowMarksHLl ctermfg=white ctermbg=grey
-highlight ShowMarksHLu ctermfg=white ctermbg=grey
+" Define hightlight colors for the markers.
+highlight ShowMarksHLl ctermfg=red ctermbg=grey
+highlight ShowMarksHLu ctermfg=red ctermbg=grey
 highlight ShowMarksHLo ctermfg=white ctermbg=grey
 highlight ShowMarksHLm ctermfg=white ctermbg=grey
 " Remove the trailing >
