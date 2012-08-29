@@ -10,9 +10,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/minibufexplorer"]
-	path = vim/bundle/minibufexplorer
-	url = git://github.com/fholgado/minibufexpl.vim.git
 [submodule "vim/bundle/lustyjuggler"]
 	path = vim/bundle/lustyjuggler
 	url = git://github.com/sjbach/lusty.git
@@ -91,3 +88,6 @@
 [submodule "vim/bundle/xmledit"]
 	path = vim/bundle/xmledit
 	url = git://github.com/sukima/xmledit.git
+[submodule "vim/bundle/buftabs"]
+	path = vim/bundle/buftabs
+	url = git://github.com/vim-scripts/buftabs.git
