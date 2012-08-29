@@ -39,6 +39,7 @@ unset path_file
 # Set the list of directories that Zsh searches for programs.
 path=(
   ~/local/bin
+  ~/Library/Haskell/bin
   /usr/local/{bin,sbin}
   /usr/{bin,sbin}
   /{bin,sbin}

@@ -15,6 +15,7 @@ ln -s -f -v `pwd`/tmux ~/.tmux
 
 # All the misc rc files
 ln -s -f -v `pwd`/misc_rc_files/pylintrc ~/.pylintrc
+ln -s -f -v `pwd`./misc_rc_files/astylerc ~/.astylerc
 
 # Link git stuff
 ln -s -f -v `pwd`/git/gitignore_global ~/.gitignore_global

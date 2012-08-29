@@ -37,6 +37,7 @@ which will symlink everything in the home directory so it should be ready to use
     ci'       | (Change Inside ') change inside the single quotes
     cib       | (Change Inside Bracket) change inside brackets
     diw       | (Delete Inside Word) delete the current word
+    gg=G      | Autoindent (=) the whole file
 
 ### How to use folding in vim
 

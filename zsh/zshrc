@@ -91,6 +91,8 @@ else
 fi
 # Easier ipython with pylab alias
 alias ipy="ipython --pylab"
+# Colorful cat command if pygmentize is installed.
+alias ccat="pygmentize"
 ############################################################
 
 ############################################################
@@ -115,3 +117,11 @@ function launch_gitit() {
     /Users/lion/Library/Haskell/ghc-7.0.4/lib/gitit-0.9.0.1/bin/gitit -f /Users/lion/Documents/Dropbox/mywiki/my.conf
 }
 ############################################################
+
+############################################################
+# CUSTOM FUNCTIONS
+#
+# Make Ctrl-R search the history like in bash.
+bindkey '^R' history-incremental-pattern-search-backward
+############################################################
+
