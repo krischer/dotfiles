@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
 
+NOW=`date +"%FT%T"`
+
+for DIR in .zshenv .zshrc .zlogout .vimrc .vim .tmux .pylintrc .astylerc .gitignore_global
+do
+    mv $DIR ${DIR}.$NOW
+done
+
 # Symlink all zsh files.
 ln -s -f -v `pwd`/zsh/zshenv ~/.zshenv
 ln -s -f -v `pwd`/zsh/zshrc ~/.zshrc
