@@ -1,4 +1,4 @@
-#
+
 # Sets Oh My Zsh options.
 #
 # Authors:
@@ -6,19 +6,19 @@
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':omz:module:editor' keymap 'vi'
+#zstyle ':omz:module:editor' keymap 'vi'
 
-# Auto convert .... to ../..
-zstyle ':omz:module:editor' dot-expansion 'yes'
+## Auto convert .... to ../..
+#zstyle ':omz:module:editor' dot-expansion 'yes'
 
-# Set case-sensitivity for completion, history lookup, etc.
-zstyle ':omz:*:*' case-sensitive 'no'
+## Set case-sensitivity for completion, history lookup, etc.
+#zstyle ':omz:*:*' case-sensitive 'no'
 
-# Color output (auto set to 'no' on dumb terminals).
-zstyle ':omz:*:*' color 'yes'
+## Color output (auto set to 'no' on dumb terminals).
+#zstyle ':omz:*:*' color 'yes'
 
-# Auto set the tab and window titles.
-zstyle ':omz:module:terminal' auto-title 'yes'
+## Auto set the tab and window titles.
+#zstyle ':omz:module:terminal' auto-title 'yes'
 
 # Set the Zsh modules to load (man zshmodules).
 # zstyle ':omz:load' zmodule 'attr' 'stat'
@@ -28,32 +28,31 @@ zstyle ':omz:module:terminal' auto-title 'yes'
 
 # Set the Oh My Zsh modules to load (browse modules).
 # The order matters.
-zstyle ':omz:load' omodule \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'syntax-highlighting' \
-  'directory' \
-  'spectrum' \
-  'utility' \
-  'completion' \
-  'prompt' \
-  'history-substring-search' \
-  'git' \
-  'command-not-found' \
-  'osx' \
-  'utility' \
-  'z'
+#zstyle ':omz:load' omodule \
+  #'environment' \
+  #'terminal' \
+  #'editor' \
+  #'history' \
+  #'syntax-highlighting' \
+  #'directory' \
+  #'spectrum' \
+  #'utility' \
+  #'completion' \
+  #'prompt' \
+  #'history-substring-search' \
+  #'git' \
+  #'command-not-found' \
+  #'osx' \
+  #'utility' \
+  #'z'
 
-
-# Set the prompt theme to load.
-# Setting it to 'random' loads a random theme.
-# Auto set to 'off' on dumb terminals.
-zstyle ':omz:module:prompt' theme 'steeef'
 
 # This will make you shout: OH MY ZSHELL!
-source "$OMZ/init.zsh"
+# Set the path to Oh My Zsh.
+export ZSH="/Users/lion/Documents/Dropbox/dotfiles/zsh/oh-my-zsh"
+ZSH_THEME="powerline"
+plugins=(git osx history-substring-search zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
 
 
 ############################################################
@@ -93,6 +92,12 @@ fi
 alias ipy="ipython --pylab"
 # Colorful cat command if pygmentize is installed.
 alias ccat="pygmentize"
+alias jeprun="export PYTHONHOME=/Users/lion/local/python_virtualenvs/obspy; java -classpath "/Users/lion/local/python_virtualenvs/obspy/lib/jep/jep.jar" jep.Run"
+
+# Open files in Quick Look.
+function ql {
+    (( $# > 0 )) && qlmanage -p "$@" &> /dev/null
+}
 ############################################################
 
 ############################################################
@@ -107,6 +112,7 @@ export LANG=en_US.UTF-8
 # PATHS
 export PYTHONPATH=/Users/lion/temp/PREFIX_TEMP/PREFIX/lib/python2.7/site-packages:/Users/lion/temp/PREFIX_TEMP/FRAMEWORK_PREFIX/Python.framework/Versions/Current/lib/python2.7/site-packages
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/Cellar/gfortran/4.2.4-5666.3/lib/gcc/i686-apple-darwin11/4.2.1/x86_64/
+export PATH=/Users/lion/local/llvm-3.1/bin:$PATH
 ############################################################
 
 
@@ -114,14 +120,14 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/Cellar/gfortran/4.2.4-5666.3/lib/gc
 # CUSTOM FUNCTIONS
 # Start the gitit server. Will launch a local wikiserver that can be reached on localhost:5001
 function launch_gitit() {
-    /Users/lion/Library/Haskell/ghc-7.0.4/lib/gitit-0.9.0.1/bin/gitit -f /Users/lion/Documents/Dropbox/mywiki/my.conf
+    /Users/lion/Library/Haskell/bin/gitit -f /Users/lion/Documents/Dropbox/mywiki/my.conf
 }
 ############################################################
 
 ############################################################
 # CUSTOM FUNCTIONS
 #
-# Make Ctrl-R search the history like in bash.
-bindkey '^R' history-incremental-pattern-search-backward
+# Vi keybindings...
+bindkey -v
 ############################################################
 

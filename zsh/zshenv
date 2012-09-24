@@ -5,9 +5,6 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-# Set the path to Oh My Zsh.
-export OMZ="/Users/lion/Documents/Dropbox/dotfiles/zsh/oh-my-zsh"
-
 # Paths
 typeset -gU cdpath fpath mailpath manpath path
 typeset -gUT INFOPATH infopath
@@ -23,6 +20,9 @@ infopath=(
   /usr/share/info
   $infopath
 )
+
+# Add zsh-completions
+fpath=(~/Dropbox/dotfiles/zsh/zsh-completions/src $fpath)
 
 # Set the list of directories that man searches for manuals.
 manpath=(

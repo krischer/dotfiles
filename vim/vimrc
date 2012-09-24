@@ -93,7 +93,7 @@ set autoindent              " always set autoindenting on
 " ==========  Color scheme
 " Use the light variant of the scheme if possible. This is in my experience
 " quite a bit easier to read under direct sunlight.
-set background=light
+set background=dark
 " Use the solarized colorscheme: http://ethanschoonover.com/solarized
 " Take care that your terminal uses the same colorscheme so everything looks
 " nice and consistent.
