@@ -14,8 +14,9 @@ set nocompatible
 " ========= Pathogen initialization
 " Use pathogen to load all other plugins. Automatically loads all plugins in
 " the bundle subfolder.
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
+source $HOME/.dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
+" runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect("$HOME/.dotfiles/vim/bundle")
 " Generate documentation for all plugins in the bundle subfolder.
 call pathogen#helptags()
 
@@ -121,8 +122,8 @@ au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 " =============================================================================
 " ========== Load all other settings stored in their own files in the settings
 " ========== subfolder
-for f in split(glob('~/.vim/settings/*.vim'), '\n')
-    exe 'source' f
+for f in split(glob('$HOME/.dotfiles/vim/settings/*.vim'), '\n')
+    exec 'source' f
 endfor
 
 " Experimental Taghighlight coloring...

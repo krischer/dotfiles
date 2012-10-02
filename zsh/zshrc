@@ -1,4 +1,3 @@
-
 # Sets Oh My Zsh options.
 #
 # Authors:
@@ -49,7 +48,7 @@
 
 # This will make you shout: OH MY ZSHELL!
 # Set the path to Oh My Zsh.
-export ZSH="/Users/lion/Documents/Dropbox/dotfiles/zsh/oh-my-zsh"
+export ZSH="$HOME/.dotfiles/zsh/oh-my-zsh"
 ZSH_THEME="powerline"
 plugins=(git osx history-substring-search zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
@@ -106,6 +105,9 @@ function ql {
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ############################################################
+#
+# Colored manpages :)
+alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 
 
 ############################################################
@@ -131,3 +133,12 @@ function launch_gitit() {
 bindkey -v
 ############################################################
 
+
+# Source the python virtualenv to always have it active.
+source $HOME/local/virtual_envs/py2.7/bin/activate
+
+# Enable autojump...
+[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
+
+# Make tab completion work with zsh.
+autoload -U compinit; compinit
