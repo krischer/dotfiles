@@ -1,6 +1,7 @@
-# My personal dotfile collection
+# YAY! Dotfiles.
 
-Central collection of my dotfiles.
+Repository of my personally used dotfiles mostly based around the triumvirate
+of vim, zsh and tmux. Should work on OSX and Linux (tested on Debian).
 
 ## Screenshot
 ![Result](http://i.imgur.com/cyqvg.png)
@@ -9,23 +10,29 @@ Central collection of my dotfiles.
 ### Requirements
 * git
 * tmux
-* vim
+* vim (with ruby bindings)
 * zsh
 * exuberant ctags (not the ctags that ships with OSX)
+* Python
+* pygmentize module for Python (for syntax highlighting through less)
 * The terminal emulator has to use a patched font. Otherwise the vim-powerline and the tmux status line will not work properly. Get one from [here](https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts).
 * [Solarized color scheme](http://ethanschoonover.com/solarized) for the terminal emulator.
 * For Python syntax checking: flake8 (`pip install flake8`)
 
 ### Actual installation
 
-Should be a simple case of cloning the repo and
+It **has to be installed to ~/.dotfiles** as otherwise it is just a pain to deal
+with relative path in all the different ways. This makes it possible to use
+absolute paths and thus avoids all these pitfalls.
 
-    sh symlink_dotfiles.sh
+    git clone https://github.com/krischer/dotfiles.git ~/.dotfiles
+    cd ~/.dotfiles
+    # The install script will init and update all submodules and symlink all
+    # necessary files.
+    sh install_dotfiles.sh
+    # Optional: Change the default shell to zsh
     chsh -s `which zsh`
 
-which will symlink everything in the home directory so it should be ready to use. It __WILL__ currently overwrite the following files, so please back them up!
-
-    ~/.zshenv, ~/.zshrc, ~/.zlogout, ~/.vimrc, ~/.vim, ~/.tmux, ~/.pylintrc, ~/.gitignore_global
 
 ## Vim configuration
 

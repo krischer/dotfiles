@@ -49,7 +49,9 @@
 # This will make you shout: OH MY ZSHELL!
 # Set the path to Oh My Zsh.
 export ZSH="$HOME/.dotfiles/zsh/oh-my-zsh"
-ZSH_THEME="powerline"
+# XXX: Hacky to be able to use the theme from a seperate repo.
+ZSH_THEME="../../oh-my-zsh-powerline-theme/powerline"
+
 plugins=(git osx history-substring-search zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
@@ -91,7 +93,6 @@ fi
 alias ipy="ipython --pylab"
 # Colorful cat command if pygmentize is installed.
 alias ccat="pygmentize"
-alias jeprun="export PYTHONHOME=/Users/lion/local/python_virtualenvs/obspy; java -classpath "/Users/lion/local/python_virtualenvs/obspy/lib/jep/jep.jar" jep.Run"
 
 # Open files in Quick Look.
 function ql {
@@ -107,7 +108,7 @@ export LANG=en_US.UTF-8
 ############################################################
 #
 # Colored manpages :)
-alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
+# alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 
 
 ############################################################

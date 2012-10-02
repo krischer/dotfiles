@@ -1,7 +1,16 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
+if [ `pwd` != $HOME/.dotfiles ]
+    then
+        echo "ERROR: Working directory for running the install script has to be ~/.dotfiles!"
+        exit 1
+fi
+
+# First step is to init and update all submodules
+git submodule update --init --recursive
+
+# Update any potential old files.
 NOW=`date +"%FT%T"`
-
 for DIR in .zshenv .zshrc .zlogout .vimrc .vim .tmux .pylintrc .astylerc .gitignore_global
 do
     mv $DIR ${DIR}.$NOW
