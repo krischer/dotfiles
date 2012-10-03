@@ -1,4 +1,4 @@
-#
+
 # Defines environment variables.
 #
 # Authors:
@@ -15,9 +15,6 @@ infopath=(
   /usr/share/info
   $infopath
 )
-
-# Add zsh-completions
-fpath=(~/.dotfiles/zsh/zsh-completions/src $fpath)
 
 # Set the list of directories that man searches for manuals.
 manpath=(

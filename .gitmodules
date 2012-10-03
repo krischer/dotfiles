@@ -70,9 +70,6 @@
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/numbers.vim"]
-	path = vim/bundle/numbers.vim
-	url = https://github.com/myusuf3/numbers.vim.git
 [submodule "vim/bundle/vim-latex"]
 	path = vim/bundle/vim-latex
 	url = git://github.com/jcf/vim-latex.git
@@ -97,3 +94,6 @@
 [submodule "zsh/oh-my-zsh-powerline-theme"]
 	path = zsh/oh-my-zsh-powerline-theme
 	url = git://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git
+[submodule "zsh/zsh-syntax-highlighting"]
+	path = zsh/zsh-syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting.git

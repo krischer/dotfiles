@@ -40,7 +40,8 @@ set spell                       " Spell checking is on by default.
 set number                      " Enable line numbering
 set ttyfast                     " The current terminal is a fast terminal so
                                 " more stuff can be sent at once.
-
+                                "
+set scrolloff=5                 " Keep 5 lines visible above/below cursor.
 
 
 set undofile                    " Save undo's after file closes

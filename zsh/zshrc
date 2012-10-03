@@ -1,59 +1,43 @@
-# Sets Oh My Zsh options.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-# Set the key mapping style to 'emacs' or 'vi'.
-#zstyle ':omz:module:editor' keymap 'vi'
-
-## Auto convert .... to ../..
-#zstyle ':omz:module:editor' dot-expansion 'yes'
-
-## Set case-sensitivity for completion, history lookup, etc.
-#zstyle ':omz:*:*' case-sensitive 'no'
-
-## Color output (auto set to 'no' on dumb terminals).
-#zstyle ':omz:*:*' color 'yes'
-
-## Auto set the tab and window titles.
-#zstyle ':omz:module:terminal' auto-title 'yes'
-
-# Set the Zsh modules to load (man zshmodules).
-# zstyle ':omz:load' zmodule 'attr' 'stat'
-
-# Set the Zsh functions to load (man zshcontrib).
-# zstyle ':omz:load' zfunction 'zargs' 'zmv'
-
-# Set the Oh My Zsh modules to load (browse modules).
-# The order matters.
-#zstyle ':omz:load' omodule \
-  #'environment' \
-  #'terminal' \
-  #'editor' \
-  #'history' \
-  #'syntax-highlighting' \
-  #'directory' \
-  #'spectrum' \
-  #'utility' \
-  #'completion' \
-  #'prompt' \
-  #'history-substring-search' \
-  #'git' \
-  #'command-not-found' \
-  #'osx' \
-  #'utility' \
-  #'z'
-
-
-# This will make you shout: OH MY ZSHELL!
+###############################################################################
+# oh-my-zsh and further plugin init
 # Set the path to Oh My Zsh.
 export ZSH="$HOME/.dotfiles/zsh/oh-my-zsh"
-# XXX: Hacky to be able to use the theme from a seperate repo.
+
+# XXX: Hacky to be able to use the theme from a separate repository.
 ZSH_THEME="../../oh-my-zsh-powerline-theme/powerline"
 
-plugins=(git osx history-substring-search zsh-syntax-highlighting)
+# Enable oh-my-zsh plugins here.
+plugins=(vi-mode git history-substring-search)
+
+# Source oh-my-zsh.
 source $ZSH/oh-my-zsh.sh
+
+# Source the zsh syntax highlighter. For some reason this is not included in
+# oh-my-zsh. Works more reliable if done after sourcing oh-my-zsh.
+source $HOME/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Add zsh-completions.
+fpath=(~/.dotfiles/zsh/zsh-completions/src $fpath)
+###############################################################################
+
+
+###############################################################################
+# Enable history substring search with vi and emacs keys. Much more intuitive!
+# From https://github.com/zsh-users/zsh-history-substring-search/issues/12
+bindkey -M emacs "^P" history-substring-search-up
+bindkey -M emacs "^N" history-substring-search-down
+bindkey -M vicmd "k" history-substring-search-up
+bindkey -M vicmd "j" history-substring-search-down
+
+for keymap in 'emacs' 'viins'; do
+    bindkey -M "$keymap" '\e[A' history-substring-search-up
+    bindkey -M "$keymap" '\e[B' history-substring-search-down
+done
+unset keymap
+
+# Remove the ugly pink default color!
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
+###############################################################################
 
 
 ############################################################
@@ -85,19 +69,18 @@ if [[ "$OSTYPE" == darwin* ]]; then
     # Misc
     alias -s pdf=ql
     alias -s txt=ql
+    # Open files in Quick Look.
+    function ql {
+        (( $# > 0 )) && qlmanage -p "$@" &> /dev/null
+    }
 else
     # On non-OSX the simple tmux.conf is sufficient.
     alias tmux="TERM=screen-256color-bce tmux -2 -f ~/.tmux/tmux.conf"
 fi
+
 # Easier ipython with pylab alias
 alias ipy="ipython --pylab"
-# Colorful cat command if pygmentize is installed.
-alias ccat="pygmentize"
 
-# Open files in Quick Look.
-function ql {
-    (( $# > 0 )) && qlmanage -p "$@" &> /dev/null
-}
 ############################################################
 
 ############################################################
@@ -106,13 +89,11 @@ function ql {
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ############################################################
-#
-# Colored manpages :)
-# alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 
 
 ############################################################
 # PATHS
+# XXX: This needs some cleanup!
 export PYTHONPATH=/Users/lion/temp/PREFIX_TEMP/PREFIX/lib/python2.7/site-packages:/Users/lion/temp/PREFIX_TEMP/FRAMEWORK_PREFIX/Python.framework/Versions/Current/lib/python2.7/site-packages
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/Cellar/gfortran/4.2.4-5666.3/lib/gcc/i686-apple-darwin11/4.2.1/x86_64/
 export PATH=/Users/lion/local/llvm-3.1/bin:$PATH
@@ -122,24 +103,24 @@ export PATH=/Users/lion/local/llvm-3.1/bin:$PATH
 ############################################################
 # CUSTOM FUNCTIONS
 # Start the gitit server. Will launch a local wikiserver that can be reached on localhost:5001
+# XXX: Should be places somewhere else!
 function launch_gitit() {
     /Users/lion/Library/Haskell/bin/gitit -f /Users/lion/Documents/Dropbox/mywiki/my.conf
 }
 ############################################################
 
-############################################################
-# CUSTOM FUNCTIONS
-#
-# Vi keybindings...
-bindkey -v
-############################################################
+# Colorful prompt after mistyping a command.
+autoload -U colors && colors
+export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r?$reset_color (Yes, No, Abort, Edit) "
 
 
 # Source the python virtualenv to always have it active.
+# XXX: Should also be put somewhere else! Machine deponent config file?
 source $HOME/local/virtual_envs/py2.7/bin/activate
 
 # Enable autojump...
 [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
 
 # Make tab completion work with zsh.
+# XXX: Check what this is actually doing.
 autoload -U compinit; compinit
