@@ -135,6 +135,7 @@ Special __ss__ always wraps the whole line ignoring leading whitespaces.
 
 ### Syntastic
 
+    ,s<space> | Toggle Syntastic. Useful as it is slow for very large files.
     ,er       | Toggle the Syntax error window. Off by default.
 
 ### CtrlP

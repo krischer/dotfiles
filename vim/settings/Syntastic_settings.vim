@@ -8,3 +8,6 @@ let g:syntastic_python_checker = 'flake8'
 
 " Toggle the error pane.
 nmap <leader>er :Error<CR>
+
+" Toggle synthastic. Useful because it can become very slow for large files!
+nmap <leader>s<space> :SyntasticToggleMode<CR>
