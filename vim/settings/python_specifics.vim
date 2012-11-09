@@ -13,7 +13,7 @@ let python_highlight_all = 1
 nmap <leader>r<space> :call RunVimTmuxCommand("bash ~/.vim/misc_scripts/run_py " . bufname("%"))<CR>
 
 " ipdb right under current line.
-nmap <leader>i<space> ofrom IPython.core.debugger import Tracer; Tracer(colors="Linux")()<Esc>
+nmap <leader>i<space> o<CR>################<CR># DEBUGGING START<CR>import sys<CR>__o_std__ = sys.stdout<CR>sys.stdout = sys.__stdout__<CR>from IPython.core.debugger import Tracer<CR>Tracer(colors="Linux")()<CR>sys.stdout = __o_std__<CR># DEBUGGING END<CR>################<CR><Esc>
 
 " Shortcut to create the typical Python file header.
 nmap <leader>p<space> ggO#!<Esc>:r !which env<CR>kJxxA python<CR># -*- coding: utf-8 -*-<CR>"""<CR>DESCRIPTION<CR><CR>:copyright:<CR>Lion Krischer (krischer@geophysik.uni-muenchen.de), <ESC>:r !date +\%Y<CR>kJo:license:<Esc><<oGNU Lesser General Public License, Version 3<CR>    (http://www.gnu.org/copyleft/lesser.html)<Esc>2<<o"""<Esc><<j

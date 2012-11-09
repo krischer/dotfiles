@@ -76,6 +76,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
 else
     # On non-OSX the simple tmux.conf is sufficient.
     alias tmux="TERM=screen-256color-bce tmux -2 -f ~/.tmux/tmux.conf"
+    # Alias xdg-open to open on linux.
+    alias open="xdg-open"
 fi
 
 # Easier ipython with pylab alias
