@@ -62,9 +62,6 @@ fi
 # Set the default Less options.
 export LESS='-R -i -c'
 
-# Set the Less input preprocessor.
-export LESSOPEN='| $HOME/.dotfiles/misc_scripts/lesspipe.sh %s 2>&-'
-
 # Manpage syntax highlighting
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;124m' # begin bold
