@@ -183,6 +183,9 @@ smart about different programming language.
 
     ,fs       | (format sentence) Takes the current sentence, and indents all lines beloning to it.
 
+### Go specific things
+    :Fmt      | Run gofmt on the currently open buffer (Autoruns upon buffer saving anyways)
+
 
 ### Profiling vim's startup process
 
