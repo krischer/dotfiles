@@ -38,7 +38,7 @@ absolute paths and thus avoids all these pitfalls.
 
 ### General shortcuts
 
-    ,vs<space>| (Vim Source) source (aka reload) the vimrc
+    ,sv<space>| (Source Vim) source (aka reload) the vimrc
     vap       | (Visual Around Paragraph) visually select this paragraph.
     ci"       | (Change Inside ") change inside the double quotes
     ci'       | (Change Inside ') change inside the single quotes
