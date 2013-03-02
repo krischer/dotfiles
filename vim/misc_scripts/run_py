@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-clear
-echo -e "\x1B[00;33mRunning Python program" $1
-echo -e "==============================================\x1B[00m"
-echo ""
-python $1
