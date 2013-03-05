@@ -11,7 +11,7 @@ git submodule update --init --recursive
 
 # Update any potential old files.
 NOW=`date +"%FT%T"`
-for DIR in .zshenv .zshrc .zlogout .vimrc .vim .tmux .pylintrc .astylerc .gitignore_global
+for DIR in ~/.zshenv ~/.zshrc ~/.zlogout ~/.vimrc ~/.vim ~/.tmux ~/.pylintrc ~/.astylerc ~/.gitignore_global ~/.tmux-powerlinerc
 do
     mv $DIR ${DIR}.$NOW
 done
@@ -28,6 +28,7 @@ ln -s -f -v `pwd`/vim ~/.vim
 # The folder is enough as an alias in the zshrc will alias the tmux command to
 # using the provided tmux.conf inside the folder.
 ln -s -f -v `pwd`/tmux ~/.tmux
+ln -s -f -v `pwd`/tmux/tmux-powerlinerc ~/.tmux-powerlinerc
 
 # All the misc rc files
 ln -s -f -v `pwd`/misc_rc_files/pylintrc ~/.pylintrc
