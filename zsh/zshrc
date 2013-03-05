@@ -96,9 +96,8 @@ export LANG=en_US.UTF-8
 ############################################################
 # PATHS
 # XXX: This needs some cleanup!
-export PYTHONPATH=/Users/lion/temp/PREFIX_TEMP/PREFIX/lib/python2.7/site-packages:/Users/lion/temp/PREFIX_TEMP/FRAMEWORK_PREFIX/Python.framework/Versions/Current/lib/python2.7/site-packages
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/Cellar/gfortran/4.2.4-5666.3/lib/gcc/i686-apple-darwin11/4.2.1/x86_64/
-export PATH=/Users/lion/local/llvm-3.1/bin:$PATH:/opt/local/bin
+export PATH=/Users/lion/local/llvm-3.1/bin:$PATH
 export NODE_PATH=/usr/local/lib/jsctags:$NODE_PATH
 ############################################################
 
