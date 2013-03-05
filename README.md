@@ -3,21 +3,23 @@
 Repository of my personally used dotfiles mostly based around the triumvirate
 of vim, zsh and tmux. Should work on OSX and Linux (tested on Debian).
 
+Currently aims to be a development environment for Python, JavaScript, C, C++
+and Go.
+
 ## Screenshot
-![Result](http://i.imgur.com/cyqvg.png)
+![Result](https://raw.github.com/krischer/dotfiles/master/images/screenshot.png)
 
 ## Installation
 ### Requirements
 * git
 * tmux
 * vim (with ruby bindings)
-* zsh
-* exuberant ctags (not the ctags that ships with OSX)
-* Python
-* pygmentize module for Python (for syntax highlighting through less)
-* The terminal emulator has to use a patched font. Otherwise the vim-powerline and the tmux status line will not work properly. Get one from [here](https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts).
+* zsh >= 4.3
+* [Exuberant Ctags](http://ctags.sourceforge.net/) (not the ctags that ships with OSX)
+* The terminal emulator has to use a patched font. Otherwise the vim-powerline and the tmux status line will not work properly. Get one from [here](https://github.com/Lokaltog/powerline-fonts).
 * [Solarized color scheme](http://ethanschoonover.com/solarized) for the terminal emulator.
-* For Python syntax checking: flake8 (`pip install flake8`)
+* For Python syntax checking: [flake8](https://pypi.python.org/pypi/flake8) (`pip install flake8`)
+* For JavaScript support in vim: [jsctags](https://github.com/mozilla/doctorjs) and [JSHint](https://github.com/jshint/jshint/)
 
 ### Actual installation
 
@@ -174,18 +176,12 @@ smart about different programming language.
     v         | to open in vertical split
     q         | to close the quickfix window
 
-
-### numbers.vim
-
-    F3        | Toggle absolute/relative line numbering.
-
 ### Latex specific things
 
     ,fs       | (format sentence) Takes the current sentence, and indents all lines beloning to it.
 
 ### Go specific things
     :Fmt      | Run gofmt on the currently open buffer (Autoruns upon buffer saving anyways)
-
 
 ### Profiling vim's startup process
 
