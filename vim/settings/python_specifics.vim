@@ -5,13 +5,11 @@ au FileType python set colorcolumn=80
 
 " Complete Python highlighting (numbers, exception and wrong whitespaces)
 let python_highlight_all = 1
+let pymode = 1
 
 
 " =============================================================================
 " ========= All kinds of quite useful Python shortcuts.
-" Run the current file with Python in a seperate tmux pane.
-nmap <leader>r<space> :call RunVimTmuxCommand("bash ~/.vim/misc_scripts/run_py " . bufname("%"))<CR>
-
 " ipdb right under current line.
 nmap <leader>i<space> o<CR>################<CR># DEBUGGING START<CR>import sys<CR>__o_std__ = sys.stdout<CR>sys.stdout = sys.__stdout__<CR>from IPython.core.debugger import Tracer<CR>Tracer(colors="Linux")()<CR>sys.stdout = __o_std__<CR># DEBUGGING END<CR>################<CR><Esc>
 

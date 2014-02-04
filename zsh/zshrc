@@ -1,23 +1,48 @@
 ###############################################################################
-# oh-my-zsh and further plugin init
-# Set the path to Oh My Zsh.
-export ZSH="$HOME/.dotfiles/zsh/oh-my-zsh"
-
-# XXX: Hacky to be able to use the theme from a separate repository.
-ZSH_THEME="../../oh-my-zsh-powerline-theme/powerline"
+# Path to oh-my-zsh
+ZSH=~/.dotfiles/zsh/oh-my-zsh
 
 # Enable oh-my-zsh plugins here.
-plugins=(vi-mode git history-substring-search)
+plugins=(git history-substring-search fasd brew forklift)
+
+# Use a theme from a seperate repository.
+POWERLINE_HIDE_HOST_NAME="true"
+#POWERLINE_HIDE_GIT_PROMPT_STATUS="true"
+POWERLINE_RIGHT_A="mixed"
+POWERLINE_DETECT_SSH="true"
+ZSH_THEME="../../oh-my-zsh-powerline-theme/powerline"
+#ZSH_THEME="agnoster"
 
 # Source oh-my-zsh.
 source $ZSH/oh-my-zsh.sh
 
+# Enable vi keybindings.
+bindkey -v
+
 # Source the zsh syntax highlighter. For some reason this is not included in
 # oh-my-zsh. Works more reliable if done after sourcing oh-my-zsh.
-source $HOME/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Add zsh-completions.
 fpath=(~/.dotfiles/zsh/zsh-completions/src $fpath)
+
+# Make 'z' work like autojump.
+alias j="z"
+# Slash after directories, colorize, KB,MB,... when appropriate
+alias ls='ls -GFh'
+
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+
+# Disable auto-update prompt
+DISABLE_AUTO_UPDATE="true"
+
+# Disable setting of terminal titles.
+DISABLE_AUTO_TITLE="true"
+
+# Show red dots while waiting for completion
+COMPLETION_WAITING_DOTS="true"
 ###############################################################################
 
 
@@ -45,8 +70,6 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
 
 # Some aliases should only be set while using OSX.
 if [[ "$OSTYPE" == darwin* ]]; then
-    # Use the vim that ships with MacVim.
-    alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
     # Propert 256 color tmux. Also OSX needs special care for copy/paste to
     # work inside tmux. This will source the basic tmux.conf and execute one
     # special command for copy/paste to work.
@@ -79,11 +102,8 @@ else
     # Alias xdg-open to open on linux.
     alias open="xdg-open"
 fi
-
-# Easier ipython with pylab alias
-alias ipy="ipython --pylab"
-
 ############################################################
+
 
 ############################################################
 # RANDOM THINGS
@@ -94,31 +114,14 @@ export LANG=en_US.UTF-8
 
 
 ############################################################
-# PATHS
-# XXX: This needs some cleanup!
-export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/Cellar/gfortran/4.2.4-5666.3/lib/gcc/i686-apple-darwin11/4.2.1/x86_64/
-export PATH=/Users/lion/local/llvm-3.1/bin:$PATH
-export NODE_PATH=/usr/local/lib/jsctags:$NODE_PATH
+# PATHS. Currently adds homebrew and TeX related binaries.
+export PATH=/usr/local/bin:$PATH:/usr/texbin
 ############################################################
 
 
-############################################################
-# CUSTOM FUNCTIONS
-# Start the gitit server. Will launch a local wikiserver that can be reached on localhost:5001
-# XXX: Should be places somewhere else!
-function launch_gitit() {
-    /Users/lion/Library/Haskell/bin/gitit -f /Users/lion/Documents/Dropbox/mywiki/my.conf
-}
-############################################################
-
-# Colorful prompt after mistyping a command.
-autoload -U colors && colors
-export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r?$reset_color (Yes, No, Abort, Edit) "
-
+# Virtualenvwrapper.
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Enable autojump...
-[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
+# [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
 
-# Make tab completion work with zsh.
-# XXX: Check what this is actually doing.
-autoload -U compinit; compinit

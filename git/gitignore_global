@@ -2,10 +2,15 @@
 ###################################
 *.pyc
 
+# Rope project files
+###################################
+.ropeproject
+
 # Numerous OS generated files #
 ###############################
 .DS_Store?
 .DS_Store
+.idea
 ehthumbs.db
 Thumbs.db
 
@@ -15,3 +20,7 @@ Thumbs.db
 *.swo
 *.swn
 *.swm
+*.swl
+
+# IntellJ files
+*.iml

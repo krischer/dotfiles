@@ -16,7 +16,7 @@ set nocompatible
 " the bundle subfolder.
 source $HOME/.dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
 " runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect("$HOME/.dotfiles/vim/bundle")
+call pathogen#infect("$HOME/.dotfiles/vim/bundle/{}")
 " Generate documentation for all plugins in the bundle subfolder.
 call pathogen#helptags()
 
@@ -33,8 +33,11 @@ set hidden                      " Enable hidden buffers. Basically enables
 syntax on                       " Enable syntax highlighting.
 set updatetime=1000             " Update time of many VIM things. Seems a
                                 " reasonable value.
-set cursorline                  " show the cursor line
-set cursorcolumn                " show the cursor column
+
+" These are super slow even on a very fast machine.
+"set cursorline                  " show the cursor line
+"set cursorcolumn                " show the cursor column
+
 set magic                       " Does some magic ;-) Newline characters, ...
 set spell                       " Spell checking is on by default.
 set number                      " Enable line numbering
@@ -42,6 +45,7 @@ set ttyfast                     " The current terminal is a fast terminal so
                                 " more stuff can be sent at once.
                                 "
 set scrolloff=5                 " Keep 5 lines visible above/below cursor.
+set lazyredraw                  " More aggressive lazy redrawing. Does not appear to have an effect...
 
 
 set undofile                    " Save undo's after file closes

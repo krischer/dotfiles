@@ -11,15 +11,13 @@ git submodule update --init --recursive
 
 # Update any potential old files.
 NOW=`date +"%FT%T"`
-for DIR in ~/.zshenv ~/.zshrc ~/.zlogout ~/.vimrc ~/.vim ~/.tmux ~/.pylintrc ~/.astylerc ~/.gitignore_global ~/.tmux-powerlinerc
+for DIR in ~/.zshrc ~/.vimrc ~/.vim ~/.tmux ~/.pylintrc ~/.astylerc ~/.gitignore_global ~/.tmux-powerlinerc
 do
     mv $DIR ${DIR}.$NOW
 done
 
 # Symlink all zsh files.
-ln -s -f -v `pwd`/zsh/zshenv ~/.zshenv
 ln -s -f -v `pwd`/zsh/zshrc ~/.zshrc
-ln -s -f -v `pwd`/zsh/zlogout ~/.zlogout
 
 # Symlink the vim files.
 ln -s -f -v `pwd`/vim/vimrc ~/.vimrc
