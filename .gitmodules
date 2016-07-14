@@ -91,3 +91,6 @@
 [submodule "vim/bundle/powerline"]
 	path = vim/bundle/powerline
 	url = https://github.com/Lokaltog/powerline
+[submodule "zsh/powerlevel9k_theme"]
+	path = zsh/powerlevel9k_theme
+	url = https://github.com/bhilburn/powerlevel9k.git

@@ -5,22 +5,29 @@ ZSH=~/.dotfiles/zsh/oh-my-zsh
 # Enable oh-my-zsh plugins here.
 plugins=(git history-substring-search fasd brew forklift)
 
-# Use a theme from a seperate repository.
-POWERLINE_HIDE_HOST_NAME="true"
-#POWERLINE_HIDE_GIT_PROMPT_STATUS="true"
-POWERLINE_RIGHT_A="mixed"
-POWERLINE_DETECT_SSH="true"
-#ZSH_THEME="../../oh-my-zsh-powerline-theme/powerline"
-ZSH_THEME="agnoster"
+
+# Use the powerlevel9k theme!
+ZSH_THEME="../../powerlevel9k_theme/powerlevel9k"
+POWERLEVEL9K_MODE="awesome-patched"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status anaconda background_jobs)
+# Overwrite a couple of settings.
+POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-remotebranch)
+
 
 # Source oh-my-zsh.
 source $ZSH/oh-my-zsh.sh
+
+# Overwrite the history length setting from oh-my-zsh! Keep everything - it
+# does not take a lot of space!
+HISTSIZE=100000000000000
+SAVEHIST=100000000000000
 
 # Enable vi keybindings.
 bindkey -v
 
 # Source the zsh syntax highlighter. For some reason this is not included in
-# oh-my-zsh. Works more reliable if done after sourcing oh-my-zsh.
+# oh-my-zsh. Source after oh-my-zsh!
 source ~/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Add zsh-completions.
