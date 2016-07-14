@@ -10,8 +10,8 @@ POWERLINE_HIDE_HOST_NAME="true"
 #POWERLINE_HIDE_GIT_PROMPT_STATUS="true"
 POWERLINE_RIGHT_A="mixed"
 POWERLINE_DETECT_SSH="true"
-ZSH_THEME="../../oh-my-zsh-powerline-theme/powerline"
-#ZSH_THEME="agnoster"
+#ZSH_THEME="../../oh-my-zsh-powerline-theme/powerline"
+ZSH_THEME="agnoster"
 
 # Source oh-my-zsh.
 source $ZSH/oh-my-zsh.sh
@@ -29,7 +29,7 @@ fpath=(~/.dotfiles/zsh/zsh-completions/src $fpath)
 # Make 'z' work like autojump.
 alias j="z"
 # Slash after directories, colorize, KB,MB,... when appropriate
-alias ls='ls -GFh'
+alias ls='ls -GF'
 
 alias -g ...='../..'
 alias -g ....='../../..'
@@ -114,14 +114,6 @@ export LANG=en_US.UTF-8
 
 
 ############################################################
-# PATHS. Currently adds homebrew and TeX related binaries.
-export PATH=/usr/local/bin:$PATH:/usr/texbin
+# PATHS. Currently adds miniconda, homebrew, and TeX related binaries.
+export PATH=~/.miniconda3/bin:/usr/local/bin:/usr/local/sbin:$PATH:/usr/texbin
 ############################################################
-
-
-# Virtualenvwrapper.
-source /usr/local/bin/virtualenvwrapper.sh
-
-# Enable autojump...
-# [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
-
