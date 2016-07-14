@@ -24,3 +24,7 @@ Thumbs.db
 
 # IntellJ files
 *.iml
+
+# Python coverage files
+.coverage
+htmlcov
